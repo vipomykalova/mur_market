@@ -1,0 +1,301 @@
+html,
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+html
+{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+body
+{
+    margin: 0 0 140px;
+}
+
+.outer
+{
+    padding: 150px 25px 0;
+}
+
+.page-content
+{
+    padding-bottom: 40px;
+}
+
+.market-title
+{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    border-bottom: 2px solid #e6e6e6;
+    z-index: 5;
+}
+
+.header-content
+{
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.info-about-us
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    font-size: 15px;
+    line-height: 20px;
+    border-top: 2px solid #e6e6e6;
+    margin-top: 40px;
+}
+
+.info-about-us > a
+{
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    color: #1da7f4;
+}
+
+.about-company
+{
+    margin-left: 40px;
+}
+
+.contacts
+{
+    margin-left: 15px;
+}
+
+.copyright
+{
+    float: right;
+    margin: 25px 30px 0 0;
+}
+
+.info-about-us > a:hover
+{
+    color: #f00;
+}
+
+.cat-card
+{
+    display: inline-block;
+    border: 4px solid #e6e6e6;
+    border-radius: 10px;
+    margin: 15px;
+    width: 292px;
+    height: 392px;
+    line-height: 20px;
+
+}
+
+.cat-card > h4
+{
+    margin: 20px;
+    font-size: 18px;
+}
+
+.cat-card > p
+{
+    font-size: 13.5px;
+    margin: 0 40px 0 20px;
+}
+
+.modal-link
+{
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    height: 200px;
+    margin: -4px -4px 0;
+}
+
+.cat-photo
+{
+    height: 200px;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.cat-card:hover .cat-photo
+{
+    opacity: .5;
+}
+
+input[type='checkbox']
+{
+    display: none;
+}
+
+.change-cats-position
+{
+    cursor: pointer;
+    position: absolute;
+    left: 50px;
+    top: 135px;
+    display: inline-block;
+}
+
+.change-cats-position::before,
+.change-cats-position::after
+{
+    content: '';
+    display: block;
+
+    height: 2px;
+    width: 18px;
+
+    border: 2px solid #1da7f4;
+    border-radius: 15px;
+}
+
+.change-cats-position::after
+{
+    margin-top: 2px;
+}
+
+input[type='checkbox']:checked + label
+{
+    transform: rotate(90deg);
+}
+
+input[type='checkbox']:checked ~ .page-content
+{
+    padding-bottom: 0;
+}
+
+input[type='checkbox']:checked ~ .page-content .cat-card
+{
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    width: 600px;
+    height: 200px;
+}
+
+input[type='checkbox']:checked ~ .page-content .modal-link
+{
+    float: left;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px 0 0 10px;
+    margin-right: 20px;
+}
+
+.modal
+{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 20px 35px 20px 25px;
+    width: 830px;
+    height: 510px;
+    pointer-events: none;
+    background: #fff;
+    z-index: 10;
+    border: 2px solid #e6e6e6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
+}
+
+.container
+{
+    float: left;
+    margin-right: 25px;
+}
+
+.container-photos
+{
+    margin-bottom: 25px;
+}
+
+.container-buttons
+{
+    text-align: center;
+}
+
+.container-buttons label
+{
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background: #c4c4c4;
+    border-radius: 50%;
+}
+
+.container-photos img
+{
+    width: 500px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.modal input
+{
+    display: none;
+}
+
+.modal input:nth-of-type(2):checked ~ .container img
+{
+    transform: scale(-1, 1);
+}
+
+.modal input:nth-of-type(3):checked ~ .container img
+{
+    transform: scale(-1, 1);
+    filter: grayscale(100%);
+}
+
+.modal input:nth-of-type(1):checked ~ .container label:nth-child(1),
+.modal input:nth-of-type(2):checked ~ .container label:nth-child(2),
+.modal input:nth-of-type(3):checked ~ .container label:nth-child(3)
+{
+    background: #1da7f4;
+}
+
+.modal:target
+{
+    display: block;
+    pointer-events: auto;
+}
+
+.modal-content > h4
+{
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.modal-paragraphs > p
+{
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.close
+{
+    float: right;
+    margin-right: -22px;
+    margin-top: -15px;
+    line-height: 25px;
+    font-size: 30px;
+    text-decoration: none;
+}
